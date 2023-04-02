@@ -127,7 +127,54 @@ Bleak thoughts following a relationship breakup fuelled the driving blues/rock<b
       }).render('#paypal-button-container');
     }
     initPayPalButton();
-  </script>
+  </script><br><P>
+    
+    <div id="smart-button-container">
+      <div style="text-align: center;">
+        <div id="paypal-button-container"></div>
+      </div>
+    </div>
+  <script src="https://www.paypal.com/sdk/js?client-id=AV1EMlaEFm5I3mejRyNAdGx8qg4KdF_4scLnMObhtsZ7oyVf115QfaB8bapA5g53CGsjrGDgTf3Togoc&enable-funding=venmo&currency=GBP" data-sdk-integration-source="button-factory"></script>
+  <script>
+    function initPayPalButton() {
+      paypal.Buttons({
+        style: {
+          shape: 'pill',
+          color: 'gold',
+          layout: 'vertical',
+          label: 'checkout',
+          
+        },
+
+        createOrder: function(data, actions) {
+          return actions.order.create({
+            purchase_units: [{"description":"'Pushing against the flow'\nCd album by Andrew Riverstone\nAHR23444011","amount":{"currency_code":"GBP","value":10.5,"breakdown":{"item_total":{"currency_code":"GBP","value":8.5},"shipping":{"currency_code":"GBP","value":2},"tax_total":{"currency_code":"GBP","value":0}}}}]
+          });
+        },
+
+        onApprove: function(data, actions) {
+          return actions.order.capture().then(function(orderData) {
+            
+            // Full available details
+            console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+
+            // Show a success message within this page, e.g.
+            const element = document.getElementById('paypal-button-container');
+            element.innerHTML = '';
+            element.innerHTML = '<h3>Thank you for your payment!</h3>';
+
+            // Or go to another URL:  actions.redirect('thank_you.html');
+            
+          });
+        },
+
+        onError: function(err) {
+          console.log(err);
+        }
+      }).render('#paypal-button-container');
+    }
+    initPayPalButton();
+  </script><br><P>
     
     
    Andrew Riverstone's 2020/2021 album -<br>
