@@ -82,12 +82,11 @@ Bleak thoughts following a relationship breakup fuelled the driving blues/rock<b
     £8.50 + £2 postage and packing -<br>
   secure purchase via paypal website<br><P>
     
-   <div id="smart-button-container">
+  <div id="smart-button-container">
       <div style="text-align: center;">
         <div style="margin-bottom: 1.25rem;">
-          <p>Cd album by Andrew Riverstone
-</p>
-          <select id="item-options"><option value="'Pushing against the flow' Cd album by Andrew Riverstone AHR23444011" price="9.00">'Pushing against the flow' Cd album by Andrew Riverstone AHR23444011 - 9.00 GBP</option><option value=" 'Andrew Riverstone' Cd album by Andrew Riverstone Catalogue number - AH20444009" price="8.50"> 'Andrew Riverstone' Cd album by Andrew Riverstone Catalogue number - AH20444009 - 8.50 GBP</option></select>
+          <p>Cd album by Andrew Riverstone</p>
+          <select id="item-options"><option value="'Pushing against the flow' Cd album by Andrew Riverstone AHR23444011" price="9.00">'Pushing against the flow' Cd album by Andrew Riverstone AHR23444011 - 9.00 GBP</option><option value=" 'Andrew Riverstone' Cd album by Andrew Riverstone Catalogue number - AH20444009" price="8.00"> 'Andrew Riverstone' Cd album by Andrew Riverstone Catalogue number - AH20444009 - 8.00 GBP</option></select>
           <select style="visibility: hidden" id="quantitySelect"></select>
         </div>
       <div id="paypal-button-container"></div>
@@ -103,18 +102,17 @@ Bleak thoughts following a relationship breakup fuelled the driving blues/rock<b
     if (!isNaN(quantity)) {
       quantitySelect.style.visibility = "visible";
     }
-    var orderDescription = 'Cd album by Andrew Riverstone
-';
+    var orderDescription = 'Cd album by Andrew Riverstone';
     if(orderDescription === '') {
       orderDescription = 'Item';
     }
     paypal.Buttons({
       style: {
         shape: 'pill',
-        color: 'gold',
-        layout: 'vertical',
+        color: 'silver',
+        layout: 'horizontal',
         label: 'buynow',
-        
+        tagline: true
       },
       createOrder: function(data, actions) {
         var selectedItemDescription = itemOptions.options[itemOptions.selectedIndex].value;
@@ -186,6 +184,8 @@ Bleak thoughts following a relationship breakup fuelled the driving blues/rock<b
   }
   initPayPalButton();
     </script><br><P>
+
+
     
    Andrew Riverstone's 2020/2021 album -<br>
   £8.50 + £2 postage and packaging.  <P>
